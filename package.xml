@@ -1,8 +1,11 @@
-<package>
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>rviz_camera_stream</name>
-  <version>1.0.1</version>
+  <version>2.0.0</version>
   <description>
-    Publish a camera view as rendered by rviz on an Image topic
+    RViz2 plugin that renders the main visualization to a texture and publishes it as ROS Image messages.
+    ROS2 port of the original rviz_camera_stream package.
   </description>
 
   <maintainer email="wsacul@gmail.com">Lucas Walter</maintainer>
@@ -12,18 +15,18 @@
 
   <url type="website">https://github.com/lucasw/rviz_camera_stream</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>image_transport</build_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>roslint</build_depend>
-  <build_depend>rviz</build_depend>
-  <build_depend>sensor_msgs</build_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>pluginlib</depend>
+  <depend>rviz_common</depend>
+  <depend>rviz_rendering</depend>
+  <depend>rviz_ogre_vendor</depend>
+  <depend>sensor_msgs</depend>
+  <depend>rclcpp</depend>
 
-  <run_depend>roscpp</run_depend>
-  <run_depend>rviz</run_depend>
-  <run_depend>tf</run_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
-      <rviz plugin="${prefix}/plugin_description.xml"/>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
